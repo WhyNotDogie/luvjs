@@ -1,0 +1,24 @@
+{
+  "name": "luvjs",
+  "version": "1.0.0",
+  "description": "A way to write Love2D games in javascript or typescript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WhyNotDogie/luvjs.git"
+  },
+  "keywords": [
+    "Game",
+    "2D",
+    "Window"
+  ],
+  "author": "WhyNotDogie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WhyNotDogie/luvjs/issues"
+  },
+  "homepage": "https://github.com/WhyNotDogie/luvjs#readme"
+}
