@@ -6,6 +6,7 @@ class Window {
     async open() {
         const proc = cp.exec('start "" "love-files/LOVE/love.exe" "love-files/love-src"');
         this.process = proc
+        return undefined
     }
     async close() {
 
@@ -15,7 +16,5 @@ class Window {
     graphics = graphics
     gfx = this.graphics
 }
-
-new Window().open()
 
 export default { Window, Config }
