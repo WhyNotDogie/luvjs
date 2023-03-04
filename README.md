@@ -1,6 +1,6 @@
 <div align="center">
     <p>
-        <a href="https://love2d.org"><img src="https://raw.githubusercontent.com/WhyNotDogie/luvjs/main/readme/love2d-logo.png"></img></a>
+        <a href="https://love2d.org"><img src="https://raw.githubusercontent.com/WhyNotDogie/luvjs/main/readme/love2d-logo.png"/></a>
     </p>
 </div>
 # luvjs  
