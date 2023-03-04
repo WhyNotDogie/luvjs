@@ -5,7 +5,7 @@ import * as path from "path"
 
 class Window {
     async open() {
-        const proc = cp.exec(`start "" "${path.resolve(__dirname, "..")}/love-files/LOVE/love.exe" "${path.resolve(__dirname, "..")}/love-files/love-src"`);
+        const proc = cp.exec(`start "" "${path.resolve(__dirname, "..")}/love-files/LOVE/lovec.exe" "${path.resolve(__dirname, "..")}/love-files/love-src"`);
         this.process = proc
         return undefined
     }
