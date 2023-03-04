@@ -1,10 +1,11 @@
 import * as cp from "child_process";
 import Config from "./config";
 import * as graphics from "./graphics"
+import * as path from "path"
 
 class Window {
     async open() {
-        const proc = cp.exec('start "" "love-files/LOVE/love.exe" "love-files/love-src"');
+        const proc = cp.exec(`start "" "${path.resolve(__dirname, "..")}/love-files/LOVE/love.exe" "${path.resolve(__dirname, "..")}/love-files/love-src"`);
         this.process = proc
         return undefined
     }
@@ -17,4 +18,4 @@ class Window {
     gfx = this.graphics
 }
 
-export default { Window, Config }
+export { Window, Config }
