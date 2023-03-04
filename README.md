@@ -6,7 +6,7 @@
 </div>
 
 # luvjs  
-A way to write Love2D games in javascript or typescript written in typescript.  
+A way to write Love2D games in javascript or typescript written in typescript, with zero dependencies, written entirely in typescript and lua.  
 ## Installation
 ```shell
 npm install luvjs
