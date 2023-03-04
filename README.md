@@ -37,6 +37,7 @@ Now issue a push request, and voila!
 
 ## Things I want to add:
 - Networking
+- Joystick support (someone send help)
 
 ## Things I will NOT add: (So don't suggest them)
-- Executing lua (Security reasons)
+- Nothing here yet :D
