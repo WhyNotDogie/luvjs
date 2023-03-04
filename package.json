@@ -4,11 +4,13 @@
   "description": "A way to write Love2D games in javascript or typescript.",
   "main": "lib/index.js",
   "types": "./lib/index.d.ts",
-  "files": ["lib/**/*"],
+  "files": [
+    "lib/**/*"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "prepare" : "npm run build"
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -27,5 +29,8 @@
   "homepage": "https://github.com/WhyNotDogie/luvjs#readme",
   "devDependencies": {
     "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "@types/node": "^18.14.5"
   }
 }
