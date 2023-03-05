@@ -1,8 +1,21 @@
 local json = require "json"
 
-_LUVJS = { channel = "rd"}
+_LUVJS = { channel = "rd" }
 
---EVENTS
+local thrd = "send.lua"
+
+local th = love.thread.newThread(thrd)
+th:start()
+
+--[[
+    EVENTS
+    excludes: {
+        love.update
+        love.mousemoved
+        [all joystick callbacks]
+    }
+    
+]]
 do
 
 function love.load()
@@ -18,15 +31,43 @@ function love.filedropped(t)
 end
 
 function love.textinput(t)
-    print("<<|EVENT|"..json.encode({ type="textinput", value=t }))
+    print("<<|EVENT|"..json.encode({ type="textinput", text=t }))
 end
 
 function love.focus(t)
     if t then
-        print("<<|EVENT|"..json.encode({ type="focus", value="+" }))
+        print("<<|EVENT|"..json.encode({ type="+focus" }))
     else
-        print("<<|EVENT|"..json.encode({ type="focus", value="-" }))
+        print("<<|EVENT|"..json.encode({ type="-focus" }))
     end
+end
+
+function love.keypressed(t)
+    print("<<|EVENT|"..json.encode({ type="+key", key=t }))
+end
+
+function love.keyreleased(t)
+    print("<<|EVENT|"..json.encode({ type="-key", key=t }))
+end
+
+function love.mousepressed(t)
+    print("<<|EVENT|"..json.encode({ type="+mouse", value=t }))
+end
+
+function love.mousereleased(t)
+    print("<<|EVENT|"..json.encode({ type="-mouse", value=t }))
+end
+
+function love.mousefocus(t)
+    if t then
+        print("<<|EVENT|"..json.encode({ type="+mouseover" }))
+    else
+        print("<<|EVENT|"..json.encode({ type="-mouseover" }))
+    end
+end
+
+function love.quit()
+    print("<<|EVENT|"..json.encode({ type="quit" }))
 end
 
 end
@@ -34,15 +75,6 @@ end
 _LUVJS.errors = {
     SYNTAXERROR = 0
 }
-
-local thrd = [[
-while true do
-    local r = io.read()
-    love.thread.getChannel(_LUVJS.channel):push(r)
-end]]
-
-local th = love.thread.newThread(thrd)
-th:start()
 
 function love.update(dt)
     _LUVJS.error = th:getError()
